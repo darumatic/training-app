@@ -1,0 +1,20 @@
+spec:
+  replicas: 1
+  template:
+    spec:
+      volumes:
+        - name: foo
+          secret:
+            secretName: db-user-pass
+      containers:
+        - volumeMounts:
+            - name: foo
+              mountPath: /etc/foo
+              readOnly: true
+          env:
+            - name: KUBERNETES_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.namespace
+      serviceAccount: default
