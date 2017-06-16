@@ -81,6 +81,13 @@
                             <service>
                                 <name>training-app</name>
                                 <type>NodePort</type>
+                                <ports>
+                                    <port>
+                                        <port>8080</port>
+                                        <targetPort>8080</targetPort>
+                                        <nodePort>30005</nodePort>
+                                    </port>
+                                </ports>
                             </service>
                         </services>
                     </resources>
@@ -88,7 +95,7 @@
                         <config>
                             <fmp-service>
                                 <type>NodePort</type>
-                                <multiPort>true</multiPort>
+                                <multiPort>false</multiPort>
                             </fmp-service>
                         </config>
                     </enricher>

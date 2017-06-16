@@ -14,15 +14,20 @@ import java.io.File;
 public class K8SecretController
 {
     private static final String SECRET_HTML_TEMPLATE = "secret";
+    private static final String SECRETS_PATH = "/etc/foo";
 
     @RequestMapping("/secret")
     public String secret(Model model) {
 
-        File secretDir = new File("/etc/foo");
+        File secretDir = new File(SECRETS_PATH);
         String[] list = secretDir.list();
         for (String file : list)
         {
-            System.out.println("Found file '" + file + "'");
+            File secretsFile = new File(SECRETS_PATH + File.separator + file);
+            if (secretsFile.exists())
+            {
+                System.out.println("Found file '" + file + "'");
+            }
         }
         return SECRET_HTML_TEMPLATE;
     }
