@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Darumatic - Kubernetes Training App</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -12,6 +12,21 @@ Hurray Let's develop something!
 <p> <a href="/service">Services</a></p>
 <p> <a href="/imagesecret">Image Secrets</a></p>
 
+<p>Environment Variables</p>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="var: ${variables}">
+        <td th:text="${var.key}"></td>
+        <td th:text="${var.value}"></td>
+    </tr>
+    </tbody>
+</table>
 
 </body>
 </html>

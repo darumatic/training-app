@@ -28,6 +28,12 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>io.fabric8</groupId>
+            <artifactId>kubernetes-client</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+
         <!-- Out of the box endpoints for monitoring and health checks -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

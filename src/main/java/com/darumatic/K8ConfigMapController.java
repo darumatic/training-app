@@ -14,7 +14,7 @@ public class K8ConfigMapController
     private static final String CONFIG_MAP_HTML_TEMPLATE = "configmap";
 
     @RequestMapping("/configMap")
-    public String greeting(Model model) {
+    public String configMap(Model model) {
         return CONFIG_MAP_HTML_TEMPLATE;
     }
 }

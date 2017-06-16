@@ -14,7 +14,7 @@ public class K8ImageSecretController
     private static final String SECRET_HTML_TEMPLATE = "imagesecret";
 
     @RequestMapping("/imagesecret")
-    public String secret(Model model) {
+    public String imageSecret(Model model) {
 
         return SECRET_HTML_TEMPLATE;
     }
